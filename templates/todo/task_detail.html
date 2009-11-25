@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+{{ object.text }}<br />
+{{ object.desc }}
+{{ object.date_due }}
+{{ object.owner.username }}
+
+{% endblock content %}

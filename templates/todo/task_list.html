@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+<ul>{% for task in object_list %}
+<li>{{ task.owner.username }} - {{ task.text }}</li>
+</ul>{% endfor %}
+{% endblock %}
+

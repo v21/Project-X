@@ -1,0 +1,29 @@
+
+{% extends "base.html" %}
+
+
+
+{% block title %}
+
+    {{ userprofile.username }}'s profile
+
+{% endblock title %}
+
+
+
+{% block pageheader %}
+
+    <a href="{{ userprofile.get_absolute_url }}">{{ userprofile.username }}</a>'s profile
+
+{% endblock pageheader %}
+
+
+
+{% block content %}
+    <ul>
+    <li>Username: {{ userprofile.username }}</li>
+    <li>Name: {{ userprofile.get_full_name }}</li>
+    <li>Email : {{ userprofile.email }}</li>
+    </ul>
+{% endblock content %}
+
