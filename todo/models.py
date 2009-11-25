@@ -9,6 +9,8 @@ class Task(models.Model):
     created_date = models.DateTimeField(auto_now_add=True)
     owner = models.ForeignKey(User)
     slug = models.CharField(max_length=50)
+    points = models.IntegerField(default=10)
+
 
     def __unicode__(self):
         return self.text

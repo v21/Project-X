@@ -23,13 +23,13 @@
 <ul>{% for task in object_list %}
 <li>
     {% if task.is_done %}
-        <a href="mark_undone/{{ task.pk }}">&#x2611</a>
+       ({{ task.points }})  <a href="mark_undone/{{ task.pk }}">&#x2611</a>
         
 
-        <a class="task_completed" href="{{ task.get_absolute_url }}">{{ task.text }}</a>  <a class="edit_link" href="edit/{{ task.pk }}">(edit)</a>
+       <a class="task_completed" href="{{ task.get_absolute_url }}">{{ task.text }}</a>  <a class="edit_link" href="edit/{{ task.pk }}">(edit)</a>
 
     {% else %}
-        <a href="mark_done/{{ task.pk }}">&#x2610</a>
+       ({{ task.points }}) <a href="mark_done/{{ task.pk }}">&#x2610</a>
         
         <a class="task_uncompleted" href="{{ task.get_absolute_url }}">{{ task.text }}</a>  <a class="edit_link" href="edit/{{ task.pk }}">(edit)</a>
 
@@ -38,5 +38,7 @@
     
 </li>
 {% endfor %}</ul>
+
+<a href="add/">Add Task</a>
 
 {% endblock content %}
