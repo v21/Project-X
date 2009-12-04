@@ -1,0 +1,13 @@
+
+right, so, db design:
+
+
+each individual source of points has it's own history of scores, and it's own updating and caching.
+
+namely, a score table, which has, users, scores, time (curr score is most recent score)
+
+
+similarly, overall user looks the same, but scores come from subsystems.
+
+
+YES?
