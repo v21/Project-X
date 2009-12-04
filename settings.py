@@ -66,7 +66,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'projx.urls'
 
 TEMPLATE_DIRS = (
-    '/home/v21/Dropbox/projx/templates'    
+    '/home/v21/projx/templates'    
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.

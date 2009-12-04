@@ -27,5 +27,5 @@ urlpatterns = patterns('',
 #media server. Won't work in production.
 if settings.DEBUG:
     urlpatterns += patterns('',
-        (r'^site_media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': '/home/v21/Dropbox/projx/media/'}),
+        (r'^site_media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': '/home/v21/projx/media/'}),
     )
