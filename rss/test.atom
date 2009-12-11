@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xml:lang="en-US" xmlns="http://www.w3.org/2005/Atom">
+  <id>tag:github.com,2008:/v21</id>
+  <link type="text/html" href="http://github.com" rel="alternate"/>
+  <link type="application/atom+xml" href="http://github.com/v21.atom" rel="self"/>
+  <title>v21's Activity</title>
+  <updated>2009-12-03T20:52:51-08:00</updated>
+  <entry>
+    <id>tag:github.com,2008:PushEvent/106898402</id>
+    <published>2009-12-03T20:52:51-08:00</published>
+    <updated>2009-12-03T20:52:51-08:00</updated>
+    <link type="text/html" href="http://github.com/v21/Project-X/commits/master" rel="alternate"/>
+    <title>v21 pushed to master at v21/Project-X</title>
+    <content type="html">
+
+
+
+&lt;div class=&quot;details&quot;&gt;
+  
+  HEAD is &lt;a href=&quot;http://github.com/v21/Project-X/tree/65ba19bfb816b40ac137c0f98c968c535975503a&quot;&gt;65ba19bfb816b40ac137c0f98c968c535975503a&lt;/a&gt; 
+  
+  
+  
+
+  &lt;div class=&quot;commits&quot; &gt;
+    &lt;ul&gt;
+      
+      
+        
+        
+        &lt;li class=&quot;first&quot;&gt;
+          
+
+          
+
+          
+            &lt;span class=&quot;committer&quot;&gt;George Buckenham&lt;/span&gt;
+          
+
+          committed
+          &lt;a href=&quot;http://github.com/v21/Project-X/commit/65ba19bfb816b40ac137c0f98c968c535975503a&quot;&gt;65ba19bf&lt;/a&gt;:
+
+          &lt;div class=&quot;message&quot;&gt;
+            &lt;blockquote title=&quot;dododo, taking things out of repo that should never have been there&quot;&gt;
+              dododo, taking things out of repo that should never have been there
+            &lt;/blockquote&gt;
+          &lt;/div&gt;
+        &lt;/li&gt;
+      
+        
+        
+        &lt;li class=&quot;&quot;&gt;
+          
+
+          
+
+          
+            &lt;span class=&quot;committer&quot;&gt;George Buckenham&lt;/span&gt;
+          
+
+          committed
+          &lt;a href=&quot;http://github.com/v21/Project-X/commit/5cc15fe3d41e55a682930cde618c4de94dda1fff&quot;&gt;5cc15fe3&lt;/a&gt;:
+
+          &lt;div class=&quot;message&quot;&gt;
+            &lt;blockquote title=&quot;added CONTRIBUTORS, database has chnaged, as it will&quot;&gt;
+              added CONTRIBUTORS, database has chnaged, as it will
+            &lt;/blockquote&gt;
+          &lt;/div&gt;
+        &lt;/li&gt;
+      
+      
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</content>
+    <author>
+      <name>v21</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:PushEvent/106893509</id>
+    <published>2009-12-03T20:43:31-08:00</published>
+    <updated>2009-12-03T20:43:31-08:00</updated>
+    <link type="text/html" href="http://github.com/v21/Project-X/commits/master" rel="alternate"/>
+    <title>v21 pushed to master at v21/Project-X</title>
+    <content type="html">
+
+
+
+&lt;div class=&quot;details&quot;&gt;
+  
+  HEAD is &lt;a href=&quot;http://github.com/v21/Project-X/tree/f06761b1f5367193d3165e71241a6578ea491fa2&quot;&gt;f06761b1f5367193d3165e71241a6578ea491fa2&lt;/a&gt; 
+  
+  
+  
+
+  &lt;div class=&quot;commits&quot; &gt;
+    &lt;ul&gt;
+      
+      
+        
+        
+        &lt;li class=&quot;first&quot;&gt;
+          
+
+          
+
+          
+            &lt;span class=&quot;committer&quot;&gt;George Buckenham&lt;/span&gt;
+          
+
+          committed
+          &lt;a href=&quot;http://github.com/v21/Project-X/commit/f06761b1f5367193d3165e71241a6578ea491fa2&quot;&gt;f06761b1&lt;/a&gt;:
+
+          &lt;div class=&quot;message&quot;&gt;
+            &lt;blockquote title=&quot;added note&quot;&gt;
+              added note
+            &lt;/blockquote&gt;
+          &lt;/div&gt;
+        &lt;/li&gt;
+      
+      
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</content>
+    <author>
+      <name>v21</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:PushEvent/106893466</id>
+    <published>2009-12-03T20:42:54-08:00</published>
+    <updated>2009-12-03T20:42:54-08:00</updated>
+    <link type="text/html" href="http://github.com/v21/Project-X/commits/master" rel="alternate"/>
+    <title>v21 pushed to master at v21/Project-X</title>
+    <content type="html">
+
+
+
+&lt;div class=&quot;details&quot;&gt;
+  
+  HEAD is &lt;a href=&quot;http://github.com/v21/Project-X/tree/0c801bd1a3a4e369795cb5a40730c5495d71464c&quot;&gt;0c801bd1a3a4e369795cb5a40730c5495d71464c&lt;/a&gt; 
+  
+  
+  
+
+  &lt;div class=&quot;commits&quot; &gt;
+    &lt;ul&gt;
+      
+      
+        
+        
+        &lt;li class=&quot;first&quot;&gt;
+          
+
+          
+
+          
+            &lt;span class=&quot;committer&quot;&gt;George Buckenham&lt;/span&gt;
+          
+
+          committed
+          &lt;a href=&quot;http://github.com/v21/Project-X/commit/0c801bd1a3a4e369795cb5a40730c5495d71464c&quot;&gt;0c801bd1&lt;/a&gt;:
+
+          &lt;div class=&quot;message&quot;&gt;
+            &lt;blockquote title=&quot;Merge branch 'master'; commit 'origin/master'
+
+Conflicts:
+
+	__init__.pyc
+	replaceme.sqlite
+	settings.pyc
+	todo/__init__.pyc
+	todo/admin.pyc
+	todo/forms.pyc
+	todo/models.pyc
+	todo/urls.pyc
+	todo/views.pyc
+	urls.pyc
+	views.pyc&quot;&gt;
+              Merge branch 'master'; commit 'origin/master'
+            &lt;/blockquote&gt;
+          &lt;/div&gt;
+        &lt;/li&gt;
+      
+        
+        
+        &lt;li class=&quot;&quot;&gt;
+          
+
+          
+
+          
+            &lt;span class=&quot;committer&quot;&gt;George Buckenham&lt;/span&gt;
+          
+
+          committed
+          &lt;a href=&quot;http://github.com/v21/Project-X/commit/ca7616f412f27dff9bed499ca2b89ffe17b8981c&quot;&gt;ca7616f4&lt;/a&gt;:
+
+          &lt;div class=&quot;message&quot;&gt;
+            &lt;blockquote title=&quot;old changes from dropbox&quot;&gt;
+              old changes from dropbox
+            &lt;/blockquote&gt;
+          &lt;/div&gt;
+        &lt;/li&gt;
+      
+        
+        
+        &lt;li class=&quot;&quot;&gt;
+          
+
+          
+
+          
+            &lt;a href=&quot;http://github.com/v21&quot; class=&quot;committer&quot;&gt;v21&lt;/a&gt;
+          
+
+          committed
+          &lt;a href=&quot;http://github.com/v21/Project-X/commit/b0f2ed98f11344066a45abc71a80ceb04601d925&quot;&gt;b0f2ed98&lt;/a&gt;:
+
+          &lt;div class=&quot;message&quot;&gt;
+            &lt;blockquote title=&quot;tasks have points attached&quot;&gt;
+              tasks have points attached
+            &lt;/blockquote&gt;
+          &lt;/div&gt;
+        &lt;/li&gt;
+      
+      
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</content>
+    <author>
+      <name>v21</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:PushEvent/106576162</id>
+    <published>2009-12-03T07:26:47-08:00</published>
+    <updated>2009-12-03T07:26:47-08:00</updated>
+    <link type="text/html" href="http://github.com/v21/Project-X/commits/master" rel="alternate"/>
+    <title>v21 pushed to master at v21/Project-X</title>
+    <content type="html">
+
+
+
+&lt;div class=&quot;details&quot;&gt;
+  
+  HEAD is &lt;a href=&quot;http://github.com/v21/Project-X/tree/5e706238e02ecf1b3e9feb33f460a25be310c1f2&quot;&gt;5e706238e02ecf1b3e9feb33f460a25be310c1f2&lt;/a&gt; 
+  
+  
+  
+
+  &lt;div class=&quot;commits&quot; &gt;
+    &lt;ul&gt;
+      
+      
+        
+        
+        &lt;li class=&quot;first&quot;&gt;
+          
+
+          
+
+          
+            &lt;span class=&quot;committer&quot;&gt;George Buckenham&lt;/span&gt;
+          
+
+          committed
+          &lt;a href=&quot;http://github.com/v21/Project-X/commit/5e706238e02ecf1b3e9feb33f460a25be310c1f2&quot;&gt;5e706238&lt;/a&gt;:
+
+          &lt;div class=&quot;message&quot;&gt;
+            &lt;blockquote title=&quot;added Add Task trivailly, changed some absolute paths for tardis devving.&quot;&gt;
+              added Add Task trivailly, changed some absolute paths for tardis devving.
+            &lt;/blockquote&gt;
+          &lt;/div&gt;
+        &lt;/li&gt;
+      
+      
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</content>
+    <author>
+      <name>v21</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:CreateEvent/103452778</id>
+    <published>2009-11-24T19:20:07-08:00</published>
+    <updated>2009-11-24T19:20:07-08:00</updated>
+    <link type="text/html" href="http://github.com/v21/Project-X/tree/master" rel="alternate"/>
+    <title>v21 created branch master at v21/Project-X</title>
+    <content type="html">
+&lt;div class=&quot;details&quot;&gt;
+  
+  &lt;div class=&quot;message&quot;&gt;
+    
+      New branch is at &lt;a href=&quot;http://github.com/v21/Project-X/tree/master&quot;&gt;v21/Project-X/tree/master&lt;/a&gt;
+    
+  &lt;/div&gt;
+&lt;/div&gt;
+</content>
+    <author>
+      <name>v21</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:CreateEvent/103447247</id>
+    <published>2009-11-24T18:54:55-08:00</published>
+    <updated>2009-11-24T18:54:55-08:00</updated>
+    <link type="text/html" href="http://github.com/v21/Project-X" rel="alternate"/>
+    <title>v21 created repository Project-X</title>
+    <content type="html">
+&lt;div class=&quot;details&quot;&gt;
+  
+  &lt;div class=&quot;message&quot;&gt;
+    
+      New repository is at &lt;a href=&quot;http://github.com/v21/Project-X&quot;&gt;v21/Project-X&lt;/a&gt;
+    
+  &lt;/div&gt;
+&lt;/div&gt;
+</content>
+    <author>
+      <name>v21</name>
+    </author>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:CreateEvent/89936679</id>
+    <published>2009-10-22T09:01:13-07:00</published>
+    <updated>2009-10-22T09:01:13-07:00</updated>
+    <link type="text/html" href="http://github.com/v21/hellisotherpeoplespaths" rel="alternate"/>
+    <title>v21 created repository hellisotherpeoplespaths</title>
+    <content type="html">
+&lt;div class=&quot;details&quot;&gt;
+  
+  &lt;div class=&quot;message&quot;&gt;
+    
+      New repository is at &lt;a href=&quot;http://github.com/v21/hellisotherpeoplespaths&quot;&gt;v21/hellisotherpeoplespaths&lt;/a&gt;
+    
+  &lt;/div&gt;
+&lt;/div&gt;
+</content>
+    <author>
+      <name>v21</name>
+    </author>
+  </entry>
+</feed>
