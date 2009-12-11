@@ -78,7 +78,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.admin',
+    'projx.feeds',
     'projx.common',
     'projx.todo',
-    'projx.feeds',
 )

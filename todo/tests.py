@@ -79,6 +79,9 @@ class TaskViews(TestCase):
         self.assertEquals(response.status_code, 404)
 
     def test_first_task_correct(self):
+        '''
+        tests there's access to a task for the right user
+        '''
         self.client.login(username="test", password="pwtest")
         response = self.client.get("/tasks/id/1")
         self.assertContains(response, "Sample Task", status_code=200)

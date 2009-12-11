@@ -18,6 +18,7 @@ urlpatterns = patterns('',
     (r'^users/(?P<username>\w+)/$' , 'projx.views.profile'),
 
     (r'^tasks/', include('projx.todo.urls')),
+    (r'^feeds/', include('projx.feeds.urls')),
 
     # Uncomment the next line to enable the admin:
     (r'^admin/', include(admin.site.urls)),

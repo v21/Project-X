@@ -1,3 +1,4 @@
-import feedreader
-from rss.models import *
 
+
+def all():
+    pass
