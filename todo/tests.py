@@ -17,19 +17,28 @@ class TaskViews(TestCase):
     def setUp(self):
         #this shit needs to get shunted fixture-wards
         user = User.objects.create_user(username="test", email="test@test.com", password="pwtest")
-        Task.objects.create(owner=user, text="Sample Task", desc="Sample Description")
+        building = Building.objects.create(owner=user, name="user's default")
+        Task.objects.create(parent=building, text="Sample Task", desc="Sample Description")
         user_denied = User.objects.create_user(username="testdenied", email= "testt@otherurl.com", password="blah")
+        building_denied = Building.objects.create(owner=user_denied, name="denied user's default")
         user_inactive = User.objects.create_user(username="testinactive",email="bullcrap@whydoineedtoenterthis.com", password="test")
         user_other = User.objects.create_user(username="testother", email="test@test.com", password="pwtest")
-        Task.objects.create(owner=user_other, text="French Green Frogs", desc="MORE TEA VICAR", is_done = True)
-        Task.objects.create(owner=user_other, text="EDIT ME", desc="YES EDIT EDIT EDIT")
+        building_other = Building.objects.create(owner=user_other, name="other user's default")
+        Task.objects.create(parent=building_other, text="French Green Frogs", desc="MORE TEA VICAR", is_done = True)
+        Task.objects.create(parent=building_other, text="EDIT ME", desc="YES EDIT EDIT EDIT")
 
         
     def test_task_index_notloggedin(self):
+        '''
+        tests theres no access to /tasks for non-loggedin people
+        '''
         response = self.client.get("/tasks/")
         self.assertEquals(response.status_code, 302)
 
     def test_access_allowed(self):
+        '''
+        tests theres access to /tasks for logged-in people
+        '''
         c = Client()
         c.login(username="test", password="pwtest")
         response = c.get("/tasks/id/1")
@@ -37,22 +46,34 @@ class TaskViews(TestCase):
    
 
     def test_access_denied(self):
+        '''
+        tests there's no access to a task for the wrong user
+        '''
         c = Client()
         c.login(username="testdenied", password="blah")
         response = c.get("/tasks/id/1")
         self.assertEquals(response.status_code, 404)
 
     def test_inactive_denied(self):
+        '''
+        tests there's no access to a task for the inactive user
+        '''
         self.client.login(username="testinactive", password="test")
         response = self.client.get("/tasks/id/1")
         self.assertEquals(response.status_code, 404)
 
     def test_not_logged_in(self):
+        '''
+        tests there's no access to a task for a nonloggedin user
+        '''
         response = self.client.get("/tasks/id/1")
         self.assertEquals(response.status_code, 302)
         
 
     def test_missing(self):
+        '''
+        tests there's no access to nonexistent task
+        '''
         self.client.login(username="test", password="pwtest")
         response = self.client.get("/tasks/id/9823740")
         self.assertEquals(response.status_code, 404)
@@ -101,7 +122,7 @@ class TaskViews(TestCase):
         self.client.login(username="testother", password="pwtest")
         response = self.client.get("/tasks/id/3")
         self.assertContains(response, "EDIT ME", status_code=200)
-        response = self.client.post("/tasks/edit/3", {"text":"EDITED","desc":"YES"})
+        response = self.client.post("/tasks/edit/3", {"text":"EDITED","desc":"YES", "parent":3, "points":"10"})
         self.assertEquals(Task.objects.get(pk=3).text, "EDITED")
 
     def test_edit_unauthed(self):

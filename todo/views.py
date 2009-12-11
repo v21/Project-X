@@ -1,6 +1,6 @@
 from functools import partial
 from django.views.generic.list_detail import object_list, object_detail
-from todo.models import Task
+from todo.models import *
 from todo.forms import TaskForm
 from django.template import RequestContext, loader
 from django.http import Http404, HttpResponse, HttpResponseRedirect
@@ -30,7 +30,7 @@ def access_control(request, owner, callback):
 
 def all(request):
     #not tested
-    tasks = Task.objects.filter(owner=request.user)
+    tasks = Task.objects.filter(parent__owner=request.user)
     response = partial(object_list, request, queryset=tasks, extra_context={"user": request.user,},  template_name="todo/all.html")
     return access_control(request, request.user, response) #gimped to not actually check the objects: we know they belogn to the user already. But it does the logged-in dance well.
 
@@ -38,7 +38,7 @@ def detail(request, id):
     
     task = get_object_or_404(Task, pk=id)
     response = partial(render_to_response, "todo/task_detail.html", dictionary={"object":task})
-    return access_control(request, task.owner, response)
+    return access_control(request, task.parent.owner, response)
 
 def add_task(request):
     #NOT TESTED
@@ -71,7 +71,7 @@ def edit_task(request, id):
 
     if request.method == 'POST':
         task = get_object_or_404(Task, pk=id)
-        form = access_control(request, task.owner, partial( TaskForm, request.POST, instance=task))
+        form = access_control(request, task.parent.owner, partial( TaskForm, request.POST, instance=task))
         if form.is_valid():
             new_object = form.save(commit=False)
             new_object.owner = request.user
@@ -81,7 +81,7 @@ def edit_task(request, id):
 
     else:
         task = get_object_or_404(Task, pk=id)
-        form = access_control(request, task.owner, partial(TaskForm, instance=task)) #booyah! only return the form if we have access perms to the task we're intializing it with.
+        form = access_control(request, task.parent.owner, partial(TaskForm, instance=task)) #booyah! only return the form if we have access perms to the task we're intializing it with.
     # Create the template, context, response
     template_name = "todo/task_form.html"
     t = loader.get_template(template_name)
@@ -102,7 +102,7 @@ def mark_done(request, id):
 
     task = get_object_or_404(Task, pk=id)
     response = partial(mark_done_inner_func, request, task)
-    return access_control(request, task.owner, response)
+    return access_control(request, task.parent.owner, response)
 
 
 def mark_undone(request, id):
@@ -114,5 +114,5 @@ def mark_undone(request, id):
 
     task = get_object_or_404(Task, pk=id)
     response = partial(mark_undone_inner_func, request, task)
-    return access_control(request, task.owner, response)
+    return access_control(request, task.parent.owner, response)
 
