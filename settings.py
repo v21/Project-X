@@ -80,5 +80,5 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'projx.common',
     'projx.todo',
-    'projx.rss'
+    'projx.feeds',
 )

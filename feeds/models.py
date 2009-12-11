@@ -8,7 +8,9 @@ class Feed(models.Model):
     parent = models.ForeignKey(Building)
     last_checked = models.DateTimeField(auto_now_add=True)
     score_per_item = models.IntegerField() #do we need a more complex representaton?
-
+    
+    def __unicode__(self):
+        return self.text
 
     def fetch_new(self):
 
