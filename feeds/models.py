@@ -1,13 +1,13 @@
 from django.db import models
-from projx.common import Building, Score
+from projx.common.models import Building, Score
 from datetime import datetime
+import feedparser
+import time
 
-class Feed(models.Model):
-    text = models.CharField(max_length=100)
+class FeedBuilding(Building):
     feedurl = models.CharField(max_length=255)
-    parent = models.ForeignKey(Building)
     last_checked = models.DateTimeField(auto_now_add=True)
-    score_per_item = models.IntegerField() #do we need a more complex representaton?
+    score_per_item = models.IntegerField(default=10) #do we need a more complex representaton?
     
     def __unicode__(self):
         return self.text
@@ -16,15 +16,16 @@ class Feed(models.Model):
 
         feed = feedparser.parse(self.feedurl)
         new_feeds = []
-
         for e in feed.entries:
-            if e.published_parsed > self.last_checked:
-                new_feeds += e
+            if datetime(*e.published_parsed[:6]) > self.last_checked:
+                new_feeds += [e]
             else:
-                break #cuz theyre chronological, we can do this. yes?
+                pass #break #cuz theyre chronological, we can do this. yes?
 
         last_checked = datetime.now()
         return new_feeds
-
-
+        
+    def __init__(self, *args, **kwargs):
+        super(FeedBuilding, self).__init__(*args, **kwargs)
+        self.fetch_new()
 
