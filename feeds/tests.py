@@ -28,3 +28,12 @@ class FeedModels(TestCase):
         feed.save()
         new_posts = feed.fetch_new()
         self.assertEquals(3, len(new_posts))
+
+    """
+    from common.models import Score
+    from django.contrib.auth.models import User
+    from feeds.models import FeedBuilding
+    me = User.objects.all()[0]
+    fb = FeedBuilding(feedurl="http://github.com/v21.atom", score_per_item=10,owner = me, name="Github")
+    fb.fetch_new()
+    """
