@@ -13,11 +13,11 @@ class FeedBuilding(Building):
         return self.name
 
     def fetch_new(self):
-
+        
         feed = feedparser.parse(self.feedurl)
         new_items= []
         for e in feed.entries:
-            if datetime(*e.published_parsed[:6]) > self.last_checked:
+            if datetime(*e.published_parsed[:6]) > self.last_checked:     #this seems broken.
                 new_items += [e]
             else:
                 pass #break #cuz theyre chronological, we can do this. yes?
@@ -25,7 +25,8 @@ class FeedBuilding(Building):
         new_points = self.score_per_item * len(new_items) + self.current_score().points
         score = Score(points = new_points, parent = self)
         score.save()
-        last_checked = datetime.now()
+        self.last_checked = datetime.now()
+        self.save()
         return new_items
 
     def __init__(self, *args, **kwargs):
