@@ -12,8 +12,17 @@ class Building(models.Model):
         
     def current_score(self):
         scores = Score.objects.filter(parent=self)
-        latest_score = scores.order_by("-time")[0]
+        try:
+            latest_score = scores.order_by("-time")[0]
+        except IndexError: #catching the case where no score's been made yet. in which case, create one
+            latest_score = self.create_initial_score()
         return latest_score
+
+    def create_initial_score(self):
+        #create a Score set to 0, so later shit can just check from it...
+        score = Score(parent = self, points = 0)
+        score.save()
+        return score
 
 
 class Score(models.Model):

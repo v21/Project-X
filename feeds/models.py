@@ -22,7 +22,7 @@ class FeedBuilding(Building):
             else:
                 pass #break #cuz theyre chronological, we can do this. yes?
         
-        new_points = score_per_item * len(new_items) + self.current_score().points
+        new_points = self.score_per_item * len(new_items) + self.current_score().points
         score = Score(points = new_points, parent = self)
         score.save()
         last_checked = datetime.now()
@@ -30,5 +30,4 @@ class FeedBuilding(Building):
 
     def __init__(self, *args, **kwargs):
         super(FeedBuilding, self).__init__(*args, **kwargs)
-        self.fetch_new()
 
