@@ -8,7 +8,7 @@ def access_control(request, owner, callback):
     This factors out the "is this user allowed to look at this object" code. 
     It would be much neater as a decorator, but sadly we need to pick the object first.
     To use it: use functools.partial, to freeze the view you want called if the user 
-    does have permission (like so:  access_control(request, obj, partial(func, arg1, arg2, argn)) )
+    does have permission (like so:  access_control(request, owner, partial(func, arg1, arg2, argn)) )
     Lazy evaluation ftw!
     '''
     if request.user.is_authenticated():

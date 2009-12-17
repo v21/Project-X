@@ -29,6 +29,9 @@ class Score(models.Model):
     parent = models.ForeignKey(Building)
     points = models.IntegerField()
     time = models.DateTimeField(auto_now_add=True)
+    
+    class Meta:
+        ordering = ['parent', 'time']
 
     def __unicode__(self):
         return repr(self.parent) + " had %d points at %s" % (self.points, self.time)
