@@ -9,6 +9,7 @@ from django.test import TestCase
 from django.test.client import Client
 from todo.views import *
 from todo.models import Task
+from common.models import Building, Score
 from django.contrib.auth.models import User
 import datetime
 
@@ -16,11 +17,14 @@ class TaskModels(TestCase):
     def test_one_task_default_points_set(self):
         # why, yes, this does look like generic setUp stuff. but we need building to be in scope later, so...
         user = User.objects.create_user(username="test", email="test@test.com", password="pwtest")
+        user.save()
         building = TaskBuilding.objects.create(owner=user, name="user's default")
-        Task.objects.create(parent=building, text="Sample Task", desc="Sample Description", points=10, is_done=True) #default points = 10
+        building.save()
+        task = Task.objects.create(parent=building, text="Sample Task", desc="Sample Description", points=10, is_done=True) #default points = 10
+        task.save()
         #and here is the actual testing
-        #score = building.set_points()
-        #self.assertEqual(score.points, 10) 
+        score = building.set_points()
+        self.assertEqual(score.points, 10) 
 
         #and , of course, this isn't the only way we can get the score - we can ust summon the last one recorded.
         self.assertEqual(building.current_score().points, 10)

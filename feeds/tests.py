@@ -1,10 +1,3 @@
-"""
-This file demonstrates two different styles of tests (one doctest and one
-unittest). These will both pass when you run "manage.py test".
-
-Replace these with more appropriate tests for your application.
-"""
-
 from django.contrib.auth.models import User
 from django.test import TestCase
 from datetime import datetime
@@ -24,10 +17,10 @@ class FeedModels(TestCase):
         user.save()
         feed = FeedBuilding(name="test",owner=user, feedurl="/home/v21/projx/feeds/test.atom", last_checked=datetime(2009, 12, 3, 15, 26, 47), score_per_item=10)
         feed.save()
-        feed.last_checked = datetime(2009, 12, 3, 15, 26, 47) #bloody auto_now_add
-        feed.save()
         new_posts = feed.fetch_new()
         self.assertEquals(3, len(new_posts))
+        feed.scores_from_new(new_posts)
+        self.assertEquals(30, feed.current_score().points)
 
     """
     from common.models import Score
