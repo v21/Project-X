@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+
+    {{ user.username }}'s feeds
+
+{% endblock title %}
+
+
+
+{% block pageheader %}
+
+    <a href="{{ user.get_absolute_url }}">{{ user.username }}</a>'s feeds
+
+{% endblock pageheader %}
+
+
+
+{% block content %}
+
+<ul>{% for feed in object_list %}
+<li>
+
+        <a href="{{ feed.get_absolute_url }}">{{ feed.name }}</a>  <a class="edit_link" href="edit/{{ feed.pk }}">(edit)</a>
+    
+</li> 
+{% endfor %}</ul>
+         
+<a href="add">Add feed</a>
+         
+{% endblock content %}
+
