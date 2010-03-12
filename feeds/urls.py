@@ -1,6 +1,6 @@
 from django.conf.urls.defaults import *
 
-urlpatterns = patterns('feeds.views',
+urlpatterns = patterns('projx.feeds.views',
     (r'^$', 'all'),
     (r'^id/(\d+)$', 'detail'),
     (r'^add', 'add_feed'),

@@ -21,7 +21,7 @@ urlpatterns = patterns('',
     (r'^feeds/', include('projx.feeds.urls')),
 
     # Uncomment the next line to enable the admin:
-    (r'^admin/', include(admin.site.urls)),
+    (r'^admin/(.*)', admin.site.root),
 
 )
 

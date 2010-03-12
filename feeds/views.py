@@ -1,11 +1,11 @@
-from feeds.models import FeedBuilding
-from common.views import access_control, google_graph, scores_in_daterange
-from common.models import Score
+from projx.feeds.models import FeedBuilding
+from projx.common.views import access_control, google_graph, scores_in_daterange, redirect
+from projx.common.models import Score
 from functools import partial
 from django.views.generic.list_detail import object_list, object_detail
 from django.http import Http404, HttpResponse, HttpResponseRedirect
-from django.shortcuts import render_to_response, get_object_or_404, redirect
-from feeds.forms import FeedBuildingForm
+from django.shortcuts import render_to_response, get_object_or_404
+from projx.feeds.forms import FeedBuildingForm
 from django.template import RequestContext, loader
 
 '''

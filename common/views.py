@@ -2,10 +2,53 @@ from django.contrib.auth.views import redirect_to_login
 from django.template import RequestContext, loader
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.utils.dateformat import format as human_date
+from django.core import urlresolvers
 import pygooglechart
 
 from models import Score
 import time, datetime
+
+def redirect(to, *args, **kwargs):
+    """
+    backported from 1.1 django.shortcuts
+    Returns an HttpResponseRedirect to the apropriate URL for the arguments
+    passed.
+    
+    The arguments could be:
+    
+        * A model: the model's `get_absolute_url()` function will be called.
+    
+        * A view name, possibly with arguments: `urlresolvers.reverse()` will
+          be used to reverse-resolve the name.
+         
+        * A URL, which will be used as-is for the redirect location.
+        
+    By default issues a temporary redirect; pass permanent=True to issue a
+    permanent redirect
+    """
+    if kwargs.pop('permanent', False):
+        redirect_class = HttpResponsePermanentRedirect
+    else:
+        redirect_class = HttpResponseRedirect
+    
+    # If it's a model, use get_absolute_url()
+    if hasattr(to, 'get_absolute_url'):
+        return redirect_class(to.get_absolute_url())
+    
+    # Next try a reverse URL resolution.
+    try:
+        return redirect_class(urlresolvers.reverse(to, args=args, kwargs=kwargs))
+    except urlresolvers.NoReverseMatch:
+        # If this is a callable, re-raise.
+        if callable(to):
+            raise
+        # If this doesn't "feel" like a URL, re-raise.
+        if '/' not in to and '.' not in to:
+            raise
+        
+    # Finally, fall back and assume it's a URL
+    return redirect_class(to)
+
 
 def access_control(request, owner, callback):
     '''

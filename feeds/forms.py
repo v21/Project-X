@@ -1,4 +1,4 @@
-from feeds.models import FeedBuilding
+from projx.feeds.models import FeedBuilding
 from django.forms import *
 
 class FeedBuildingForm(ModelForm):

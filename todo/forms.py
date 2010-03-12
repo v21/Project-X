@@ -1,4 +1,4 @@
-from todo.models import Task
+from projx.todo.models import Task
 from django.forms import *
 
 class TaskForm(ModelForm):

@@ -1,12 +1,12 @@
 from functools import partial
 from django.views.generic.list_detail import object_list, object_detail
-from todo.models import *
-from todo.forms import TaskForm
-from common.views import access_control
+from projx.todo.models import *
+from projx.todo.forms import TaskForm
+from projx.common.views import access_control, redirect
 from django.template import RequestContext, loader
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.contrib.auth.views import redirect_to_login
-from django.shortcuts import render_to_response, get_object_or_404, redirect
+from django.shortcuts import render_to_response, get_object_or_404
 
 
 def all(request):
